@@ -2,1016 +2,1148 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="description"
-        content="Personal portfolio of Alex Carter — a modern web developer creating responsive and engaging digital experiences."
-    >
-
-    <meta name="author" content="Alex Carter">
-
-    <title>Alex Carter | Web Developer</title>
+    <title>Arend A. Ogoy | IT Portfolio</title>
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- Icons -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            color: #172033;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVIGATION */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,.97);
+            border-bottom: 1px solid #e5eaf1;
+        }
+
+        nav {
+            max-width: 1150px;
+            height: 70px;
+            margin: auto;
+            padding: 0 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .logo span,
+        .section-title span,
+        footer span {
+            color: #1769e0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: #1769e0;
+        }
+
+        .menu {
+            display: none;
+            border: none;
+            background: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        /* HERO */
+        .hero {
+            max-width: 1150px;
+            min-height: 650px;
+            margin: auto;
+            padding: 70px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text {
+            max-width: 650px;
+        }
+
+        .small-title {
+            color: #1769e0;
+            font-weight: 600;
+            letter-spacing: 3px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 70px);
+            line-height: 1.1;
+            margin: 10px 0;
+        }
+
+        .hero h1 span {
+            color: #1769e0;
+        }
+
+        .hero h2 {
+            font-size: 22px;
+            font-weight: 500;
+            margin: 20px 0;
+        }
+
+        .description {
+            color: #657083;
+            max-width: 600px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .btn {
+            padding: 12px 22px;
+            border-radius: 8px;
+            border: 2px solid #1769e0;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .primary {
+            color: white;
+            background: #1769e0;
+        }
+
+        .primary:hover {
+            background: #0d4fae;
+            transform: translateY(-3px);
+        }
+
+        .secondary {
+            color: #1769e0;
+        }
+
+        .secondary:hover {
+            color: white;
+            background: #1769e0;
+        }
+
+        .socials {
+            display: flex;
+            gap: 12px;
+        }
+
+        .socials a {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #d9e1ec;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: .3s;
+        }
+
+        .socials a:hover {
+            color: white;
+            background: #1769e0;
+            transform: translateY(-3px);
+        }
+
+        /* PROFILE */
+        .profile {
+            width: 320px;
+            height: 390px;
+            border-radius: 25px;
+            background: #edf3fb;
+            border: 8px solid white;
+            box-shadow: 0 20px 50px rgba(23,105,224,.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #1769e0;
+        }
+
+        .profile i {
+            font-size: 80px;
+        }
+
+        .profile p {
+            margin-top: 10px;
+        }
+
+        /* SECTIONS */
+        section {
+            scroll-margin-top: 80px;
+        }
+
+        .section {
+            padding: 90px 25px;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .gray {
+            max-width: none;
+            background: #f6f8fc;
+        }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title p {
+            color: #1769e0;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+        }
+
+        /* ABOUT */
+        .about {
+            max-width: 900px;
+            margin: auto;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-icon {
+            min-width: 150px;
+            height: 150px;
+            background: #eaf2ff;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: #1769e0;
+        }
+
+        .about h3 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .about p {
+            color: #657083;
+            margin-bottom: 12px;
+        }
+
+        /* CARDS */
+        .cards {
+            display: grid;
+            gap: 20px;
+        }
+
+        .skills {
+            grid-template-columns: repeat(4,1fr);
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e5eaf1;
+            border-radius: 15px;
+            padding: 28px 20px;
+            text-align: center;
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(23,105,224,.1);
+            border-color: #1769e0;
+        }
+
+        .card i {
+            color: #1769e0;
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #657083;
+            font-size: 13px;
+        }
+
+        /* PROJECTS */
+        .projects {
+            grid-template-columns: repeat(2,1fr);
+        }
+
+        .project {
+            text-align: left;
+            display: flex;
+            gap: 20px;
+        }
+
+        .project-icon {
+            min-width: 60px;
+            height: 60px;
+            background: #eaf2ff;
+            color: #1769e0;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-icon i {
+            font-size: 25px;
+            margin: 0;
+        }
+
+        .project p {
+            margin: 8px 0;
+        }
+
+        .tags {
+            margin: 12px 0;
+        }
+
+        .tags span {
+            display: inline-block;
+            padding: 4px 10px;
+            margin: 2px;
+            border-radius: 20px;
+            background: #edf3fb;
+            color: #1769e0;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .project-link {
+            color: #1769e0;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* EDUCATION */
+        .education {
+            max-width: 850px;
+            margin: auto;
+            padding: 35px;
+            background: white;
+            border-left: 5px solid #1769e0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(23,32,51,.06);
+            display: flex;
+            gap: 25px;
+        }
+
+        .education-icon {
+            min-width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: #eaf2ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1769e0;
+            font-size: 25px;
+        }
+
+        .education small {
+            color: #1769e0;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .education h3 {
+            margin: 5px 0;
+            font-size: 22px;
+        }
+
+        .education p {
+            color: #657083;
+        }
+
+        /* HOBBIES */
+        .hobbies {
+            grid-template-columns: repeat(4,1fr);
+        }
+
+        /* CONTACT */
+        .contact {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info > p {
+            color: #657083;
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin: 18px 0;
+        }
+
+        .contact-item i {
+            width: 42px;
+            height: 42px;
+            background: #eaf2ff;
+            color: #1769e0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-item p {
+            color: #657083;
+            font-size: 13px;
+        }
+
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(23,32,51,.06);
+        }
+
+        .input {
+            margin-bottom: 18px;
+        }
+
+        .input label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .input input,
+        .input textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #dce2eb;
+            border-radius: 8px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        .input input:focus,
+        .input textarea:focus {
+            border-color: #1769e0;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111827;
+            color: white;
+            padding: 40px 25px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            color: #9ca6b5;
+            font-size: 13px;
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .footer-socials a {
+            width: 38px;
+            height: 38px;
+            border: 1px solid #374151;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-socials a:hover {
+            background: #1769e0;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:900px) {
+
+            .menu {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                padding: 15px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .buttons,
+            .socials {
+                justify-content: center;
+            }
+
+            .skills,
+            .hobbies {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .contact {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width:600px) {
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h2 {
+                font-size: 18px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .profile {
+                width: 260px;
+                height: 320px;
+            }
+
+            .section {
+                padding: 65px 20px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .skills,
+            .projects,
+            .hobbies {
+                grid-template-columns: 1fr;
+            }
+
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .education {
+                flex-direction: column;
+            }
+
+            .project {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
-    <header class="header" id="header">
-        <nav class="navbar container">
+<!-- NAVIGATION -->
+<header>
+    <nav>
+        <a href="#home" class="logo">PK<span>.</span></a>
 
-            <a href="#home" class="logo">
-                <span>&lt;</span>Alex<span>/&gt;</span>
-            </a>
+        <button class="menu" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
 
-            <div class="nav-menu" id="nav-menu">
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#contact" class="nav-link">Contact</a>
 
-                <button
-                    class="theme-toggle"
-                    id="theme-toggle"
-                    aria-label="Toggle dark and light mode"
-                >
-                    <i class="fas fa-sun"></i>
-                </button>
+<!-- HOME -->
+<section id="home" class="hero">
 
-            </div>
+    <div class="hero-text">
 
-            <button
-                class="menu-toggle"
-                id="menu-toggle"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        <p class="small-title">HELLO, I'M</p>
 
-        </nav>
-    </header>
+        <h1>
+            Pocholo Kieanh<br>
+            <span>G. Cadavis</span>
+        </h1>
 
+        <h2>IT Student & Aspiring Software Developer</h2>
 
-    <main>
+        <p class="description">
+            I am an Information Technology student interested in
+            programming, web development, software development,
+            and technology.
+        </p>
 
-        <!-- ================= HERO ================= -->
-        <section class="hero section" id="home">
+        <div class="buttons">
+            <a href="#projects" class="btn primary">View Projects</a>
+            <a href="#contact" class="btn secondary">Contact Me</a>
+        </div>
 
-            <div class="hero-bg"></div>
+        <div class="socials">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
 
-            <div class="container hero-container">
+    </div>
 
-                <div class="hero-content reveal">
 
-                    <div class="availability">
-                        <span class="status-dot"></span>
-                        Available for opportunities
-                    </div>
+    <div class="profile">
+        <i class="fas fa-user"></i>
+        <p>Profile Photo</p>
+    </div>
 
-                    <p class="hero-intro">Hello, I'm</p>
+</section>
 
-                    <h1>
-                        Alex <span>Carter</span>
-                    </h1>
 
-                    <h2>
-                        I build <span class="typing-text">digital experiences.</span>
-                    </h2>
+<!-- ABOUT -->
+<section id="about" class="section">
 
-                    <p class="hero-description">
-                        I'm a passionate web developer focused on creating
-                        fast, accessible, beautiful, and user-friendly
-                        digital experiences.
-                    </p>
+    <div class="section-title">
+        <p>GET TO KNOW ME</p>
+        <h2>About <span>Me</span></h2>
+    </div>
 
-                    <div class="hero-buttons">
+    <div class="about">
 
-                        <a href="#projects" class="btn btn-primary">
-                            View My Work
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
+        <div class="about-icon">
+            <i class="fas fa-laptop-code"></i>
+        </div>
 
-                        <a href="#contact" class="btn btn-outline">
-                            Contact Me
-                        </a>
-
-                    </div>
-
-                    <div class="hero-socials">
-
-                        <a href="#" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-
-                        <a href="#" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-
-                        <a href="#" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-
-                        <a href="mailto:hello@example.com" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div class="hero-visual reveal">
-
-                    <div class="hero-image-wrapper">
-
-                        <div class="image-glow"></div>
-
-                        <div class="profile-image">
-                            <img
-                                src="assets/images/profile.jpg"
-                                alt="Alex Carter profile photo"
-                                onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=80'"
-                            >
-                        </div>
-
-                        <div class="floating-card card-one">
-                            <i class="fab fa-js"></i>
-                            <span>JavaScript</span>
-                        </div>
-
-                        <div class="floating-card card-two">
-                            <i class="fab fa-react"></i>
-                            <span>React</span>
-                        </div>
-
-                        <div class="code-decoration">
-                            <span>{</span>
-                            <span>}</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <a href="#about" class="scroll-down">
-                <span>Scroll down</span>
-                <i class="fas fa-arrow-down"></i>
-            </a>
-
-        </section>
-
-
-        <!-- ================= ABOUT ================= -->
-        <section class="about section" id="about">
-
-            <div class="container">
-
-                <div class="section-heading reveal">
-                    <span class="section-number">01</span>
-
-                    <div>
-                        <p class="section-label">Get to know me</p>
-                        <h2>About <span>Me</span></h2>
-                    </div>
-                </div>
-
-
-                <div class="about-grid">
-
-                    <div class="about-image reveal">
-
-                        <div class="about-image-box">
-                            <img
-                                src="assets/images/about.jpg"
-                                alt="Developer working at a computer"
-                                onerror="this.src='https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80'"
-                            >
-                        </div>
-
-                        <div class="experience-badge">
-                            <strong>3+</strong>
-                            <span>Years of<br>Experience</span>
-                        </div>
-
-                    </div>
-
-
-                    <div class="about-content reveal">
-
-                        <p class="about-highlight">
-                            I turn ideas into meaningful digital experiences.
-                        </p>
-
-                        <p>
-                            I'm Alex, a passionate web developer who enjoys
-                            transforming complex problems into simple,
-                            elegant, and intuitive interfaces.
-                        </p>
-
-                        <p>
-                            My approach combines clean code, thoughtful
-                            design, accessibility, and performance to create
-                            websites that don't just look great — they work
-                            exceptionally well.
-                        </p>
-
-                        <div class="about-details">
-
-                            <div>
-                                <span>Name</span>
-                                <strong>Alex Carter</strong>
-                            </div>
-
-                            <div>
-                                <span>Email</span>
-                                <strong>hello@example.com</strong>
-                            </div>
-
-                            <div>
-                                <span>Location</span>
-                                <strong>Philippines</strong>
-                            </div>
-
-                            <div>
-                                <span>Availability</span>
-                                <strong class="available-text">Open to work</strong>
-                            </div>
-
-                        </div>
-
-                        <a
-                            href="assets/resume/resume.pdf"
-                            class="btn btn-primary"
-                            download
-                        >
-                            Download Resume
-                            <i class="fas fa-download"></i>
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Statistics -->
-
-                <div class="stats reveal">
-
-                    <div class="stat">
-                        <strong data-count="3">0</strong>
-                        <span>Years Experience</span>
-                    </div>
-
-                    <div class="stat">
-                        <strong data-count="25">0</strong>
-                        <span>Projects Completed</span>
-                    </div>
-
-                    <div class="stat">
-                        <strong data-count="12">0</strong>
-                        <span>Technologies</span>
-                    </div>
-
-                    <div class="stat">
-                        <strong data-count="15">0</strong>
-                        <span>Happy Clients</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= SKILLS ================= -->
-        <section class="skills section" id="skills">
-
-            <div class="container">
-
-                <div class="section-heading reveal">
-                    <span class="section-number">02</span>
-
-                    <div>
-                        <p class="section-label">My expertise</p>
-                        <h2>Skills & <span>Technologies</span></h2>
-                    </div>
-                </div>
-
-
-                <div class="skills-grid">
-
-                    <div class="skill-card reveal">
-                        <div class="skill-icon html">
-                            <i class="fab fa-html5"></i>
-                        </div>
-                        <h3>HTML5</h3>
-                        <p>Semantic and accessible web structure.</p>
-
-                        <div class="skill-progress">
-                            <span style="width: 95%"></span>
-                        </div>
-                        <small>95%</small>
-                    </div>
-
-
-                    <div class="skill-card reveal">
-                        <div class="skill-icon css">
-                            <i class="fab fa-css3-alt"></i>
-                        </div>
-                        <h3>CSS3</h3>
-                        <p>Responsive layouts and modern interfaces.</p>
-
-                        <div class="skill-progress">
-                            <span style="width: 92%"></span>
-                        </div>
-                        <small>92%</small>
-                    </div>
-
-
-                    <div class="skill-card reveal">
-                        <div class="skill-icon js">
-                            <i class="fab fa-js"></i>
-                        </div>
-                        <h3>JavaScript</h3>
-                        <p>Interactive and dynamic web applications.</p>
-
-                        <div class="skill-progress">
-                            <span style="width: 88%"></span>
-                        </div>
-                        <small>88%</small>
-                    </div>
-
-
-                    <div class="skill-card reveal">
-                        <div class="skill-icon react">
-                            <i class="fab fa-react"></i>
-                        </div>
-                        <h3>React</h3>
-                        <p>Modern component-based applications.</p>
-
-                        <div class="skill-progress">
-                            <span style="width: 85%"></span>
-                        </div>
-                        <small>85%</small>
-                    </div>
-
-
-                    <div class="skill-card reveal">
-                        <div class="skill-icon python">
-                            <i class="fab fa-python"></i>
-                        </div>
-                        <h3>Python</h3>
-                        <p>Automation, backend and application development.</p>
-
-                        <div class="skill-progress">
-                            <span style="width: 82%"></span>
-                        </div>
-                        <small>82%</small>
-                    </div>
-
-
-                    <div class="skill-card reveal">
-                        <div class="skill-icon git">
-                            <i class="fab fa-git-alt"></i>
-                        </div>
-                        <h3>Git & GitHub</h3>
-                        <p>Version control and collaborative development.</p>
-
-                        <div class="skill-progress">
-                            <span style="width: 90%"></span>
-                        </div>
-                        <small>90%</small>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= PROJECTS ================= -->
-        <section class="projects section" id="projects">
-
-            <div class="container">
-
-                <div class="section-heading reveal">
-                    <span class="section-number">03</span>
-
-                    <div>
-                        <p class="section-label">Selected work</p>
-                        <h2>Featured <span>Projects</span></h2>
-                    </div>
-
-                    <a href="#" class="view-all">
-                        View all
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-
-
-                <div class="projects-grid">
-
-                    <article class="project-card reveal">
-
-                        <div class="project-image">
-                            <img
-                                src="assets/images/project-1.jpg"
-                                alt="E-commerce project"
-                                onerror="this.src='https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80'"
-                            >
-
-                            <div class="project-overlay">
-                                <a href="#" aria-label="Live project">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-
-                                <a href="#" aria-label="GitHub repository">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="project-content">
-
-                            <div class="project-top">
-                                <span>01</span>
-                                <div>
-                                    <i class="fab fa-html5"></i>
-                                    <i class="fab fa-js"></i>
-                                </div>
-                            </div>
-
-                            <h3>Modern E-Commerce</h3>
-
-                            <p>
-                                A responsive e-commerce interface designed
-                                with a focus on usability and conversion.
-                            </p>
-
-                            <div class="tech-list">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="project-card reveal">
-
-                        <div class="project-image">
-                            <img
-                                src="assets/images/project-2.jpg"
-                                alt="Analytics dashboard"
-                                onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80'"
-                            >
-
-                            <div class="project-overlay">
-                                <a href="#" aria-label="Live project">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-
-                                <a href="#" aria-label="GitHub repository">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="project-content">
-
-                            <div class="project-top">
-                                <span>02</span>
-                                <div>
-                                    <i class="fab fa-react"></i>
-                                </div>
-                            </div>
-
-                            <h3>Analytics Dashboard</h3>
-
-                            <p>
-                                A clean dashboard interface for visualizing
-                                business data and performance metrics.
-                            </p>
-
-                            <div class="tech-list">
-                                <span>React</span>
-                                <span>JavaScript</span>
-                                <span>API</span>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="project-card reveal">
-
-                        <div class="project-image">
-                            <img
-                                src="assets/images/project-3.jpg"
-                                alt="Task management application"
-                                onerror="this.src='https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=900&q=80'"
-                            >
-
-                            <div class="project-overlay">
-                                <a href="#" aria-label="Live project">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-
-                                <a href="#" aria-label="GitHub repository">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="project-content">
-
-                            <div class="project-top">
-                                <span>03</span>
-                                <div>
-                                    <i class="fab fa-node-js"></i>
-                                </div>
-                            </div>
-
-                            <h3>Task Management App</h3>
-
-                            <p>
-                                A productivity application for organizing
-                                projects, tasks, and team workflows.
-                            </p>
-
-                            <div class="tech-list">
-                                <span>Node.js</span>
-                                <span>MongoDB</span>
-                                <span>JavaScript</span>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= EXPERIENCE ================= -->
-        <section class="experience section" id="experience">
-
-            <div class="container">
-
-                <div class="section-heading reveal">
-                    <span class="section-number">04</span>
-
-                    <div>
-                        <p class="section-label">My journey</p>
-                        <h2>Experience & <span>Education</span></h2>
-                    </div>
-                </div>
-
-
-                <div class="timeline">
-
-                    <div class="timeline-item reveal">
-
-                        <div class="timeline-dot"></div>
-
-                        <div class="timeline-date">
-                            2024 — Present
-                        </div>
-
-                        <div class="timeline-content">
-
-                            <span>Professional Experience</span>
-
-                            <h3>Frontend Developer</h3>
-
-                            <h4>Creative Digital Studio</h4>
-
-                            <p>
-                                Developed responsive websites and interactive
-                                interfaces while collaborating with designers
-                                and backend developers.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="timeline-item reveal">
-
-                        <div class="timeline-dot"></div>
-
-                        <div class="timeline-date">
-                            2023 — 2024
-                        </div>
-
-                        <div class="timeline-content">
-
-                            <span>Internship</span>
-
-                            <h3>Web Development Intern</h3>
-
-                            <h4>Digital Solutions Inc.</h4>
-
-                            <p>
-                                Built reusable frontend components, fixed
-                                interface issues, and assisted in developing
-                                responsive web applications.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="timeline-item reveal">
-
-                        <div class="timeline-dot"></div>
-
-                        <div class="timeline-date">
-                            2020 — 2024
-                        </div>
-
-                        <div class="timeline-content">
-
-                            <span>Education</span>
-
-                            <h3>Bachelor of Computer Science</h3>
-
-                            <h4>Your University</h4>
-
-                            <p>
-                                Studied software engineering, web development,
-                                databases, algorithms, networking, and
-                                application development.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= SERVICES ================= -->
-        <section class="services section" id="services">
-
-            <div class="container">
-
-                <div class="section-heading reveal">
-                    <span class="section-number">05</span>
-
-                    <div>
-                        <p class="section-label">What I offer</p>
-                        <h2>My <span>Services</span></h2>
-                    </div>
-                </div>
-
-
-                <div class="services-grid">
-
-                    <div class="service-card reveal">
-
-                        <div class="service-number">01</div>
-
-                        <i class="fas fa-code"></i>
-
-                        <h3>Web Development</h3>
-
-                        <p>
-                            Fast, scalable and modern websites built with
-                            clean and maintainable code.
-                        </p>
-
-                    </div>
-
-
-                    <div class="service-card reveal">
-
-                        <div class="service-number">02</div>
-
-                        <i class="fas fa-pen-ruler"></i>
-
-                        <h3>UI/UX Design</h3>
-
-                        <p>
-                            User-focused interfaces designed to be intuitive,
-                            attractive and easy to use.
-                        </p>
-
-                    </div>
-
-
-                    <div class="service-card reveal">
-
-                        <div class="service-number">03</div>
-
-                        <i class="fas fa-mobile-screen"></i>
-
-                        <h3>Responsive Design</h3>
-
-                        <p>
-                            Pixel-perfect layouts that work beautifully
-                            across phones, tablets and desktops.
-                        </p>
-
-                    </div>
-
-
-                    <div class="service-card reveal">
-
-                        <div class="service-number">04</div>
-
-                        <i class="fas fa-server"></i>
-
-                        <h3>Backend Development</h3>
-
-                        <p>
-                            Reliable backend solutions, APIs and database
-                            integrations for modern applications.
-                        </p>
-
-                    </div>
-
-
-                    <div class="service-card reveal">
-
-                        <div class="service-number">05</div>
-
-                        <i class="fas fa-screwdriver-wrench"></i>
-
-                        <h3>Website Maintenance</h3>
-
-                        <p>
-                            Continuous improvements, updates, bug fixes,
-                            optimization and security.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= CONTACT ================= -->
-        <section class="contact section" id="contact">
-
-            <div class="container">
-
-                <div class="section-heading reveal">
-                    <span class="section-number">06</span>
-
-                    <div>
-                        <p class="section-label">Let's work together</p>
-                        <h2>Get In <span>Touch</span></h2>
-                    </div>
-                </div>
-
-
-                <div class="contact-grid">
-
-                    <div class="contact-info reveal">
-
-                        <h3>
-                            Have a project in mind?
-                            <span>Let's talk.</span>
-                        </h3>
-
-                        <p>
-                            Whether you have a project, an idea, or simply
-                            want to say hello, feel free to reach out.
-                        </p>
-
-
-                        <div class="contact-details">
-
-                            <a href="mailto:hello@example.com">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-
-                                <div>
-                                    <span>Email</span>
-                                    <strong>hello@example.com</strong>
-                                </div>
-                            </a>
-
-
-                            <a href="tel:+631234567890">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-
-                                <div>
-                                    <span>Phone</span>
-                                    <strong>+63 123 456 7890</strong>
-                                </div>
-                            </a>
-
-
-                            <div>
-                                <div class="contact-icon">
-                                    <i class="fas fa-location-dot"></i>
-                                </div>
-
-                                <div>
-                                    <span>Location</span>
-                                    <strong>Philippines</strong>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        <div class="contact-socials">
-
-                            <a href="#" aria-label="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-
-                            <a href="#" aria-label="LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-
-                            <a href="#" aria-label="Facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-
-                            <a href="#" aria-label="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-                    <form class="contact-form reveal" id="contact-form">
-
-                        <div class="form-row">
-
-                            <div class="form-group">
-                                <label for="name">Your Name</label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    placeholder="John Doe"
-                                    required
-                                >
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    placeholder="john@example.com"
-                                    required
-                                >
-                            </div>
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="subject">Subject</label>
-
-                            <input
-                                type="text"
-                                id="subject"
-                                name="subject"
-                                placeholder="Project discussion"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="message">Message</label>
-
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows="7"
-                                placeholder="Tell me about your project..."
-                                required
-                            ></textarea>
-
-                        </div>
-
-
-                        <button type="submit" class="btn btn-primary">
-                            Send Message
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-
-                        <p class="form-message" id="form-message"></p>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer">
-
-        <div class="container footer-container">
-
-            <a href="#home" class="logo">
-                <span>&lt;</span>Alex<span>/&gt;</span>
-            </a>
+        <div>
+            <h3>I'm an IT Student</h3>
 
             <p>
-                © <span id="year"></span> Alex Carter.
-                All rights reserved.
+                I am currently studying Bachelor of Science in
+                Information Technology at Nueva Vizcaya State University.
+                I enjoy learning how technology can be used to solve
+                problems and make everyday tasks easier.
             </p>
 
-            <div class="footer-socials">
+            <p>
+                My interests include programming, web development,
+                software development, databases, and exploring
+                new technologies.
+            </p>
+        </div>
 
-                <a href="#" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
+    </div>
 
-                <a href="#" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
+</section>
 
-                <a href="#" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
+
+<!-- SKILLS -->
+<section id="skills" class="section gray">
+
+    <div class="section-inner">
+
+        <div class="section-title">
+            <p>WHAT I WORK WITH</p>
+            <h2>My <span>Skills</span></h2>
+        </div>
+
+        <div class="cards skills">
+
+            <div class="card">
+                <i class="fab fa-html5"></i>
+                <h3>HTML</h3>
+                <p>Building website structures.</p>
+            </div>
+
+            <div class="card">
+                <i class="fab fa-css3-alt"></i>
+                <h3>CSS</h3>
+                <p>Creating website designs.</p>
+            </div>
+
+            <div class="card">
+                <i class="fab fa-js"></i>
+                <h3>JavaScript</h3>
+                <p>Adding website interaction.</p>
+            </div>
+
+            <div class="card">
+                <i class="fab fa-php"></i>
+                <h3>PHP</h3>
+                <p>Creating dynamic websites.</p>
+            </div>
+
+            <div class="card">
+                <i class="fab fa-java"></i>
+                <h3>Java</h3>
+                <p>Object-oriented programming.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-database"></i>
+                <h3>MySQL</h3>
+                <p>Managing application data.</p>
+            </div>
+
+            <div class="card">
+                <i class="fab fa-bootstrap"></i>
+                <h3>Bootstrap</h3>
+                <p>Building responsive layouts.</p>
+            </div>
+
+            <div class="card">
+                <i class="fab fa-github"></i>
+                <h3>Git / GitHub</h3>
+                <p>Managing source code.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+
+    <div class="section-title">
+        <p>MY RECENT WORK</p>
+        <h2>My <span>Projects</span></h2>
+    </div>
+
+    <div class="cards projects">
+
+        <div class="card project">
+
+            <div class="project-icon">
+                <i class="fas fa-users"></i>
+            </div>
+
+            <div>
+                <h3>Student Management System</h3>
+
+                <p>
+                    A system for managing student information
+                    and records.
+                </p>
+
+                <div class="tags">
+                    <span>PHP</span>
+                    <span>MySQL</span>
+                    <span>HTML</span>
+                </div>
+
+                <a href="#" class="project-link">
+                    View Project →
                 </a>
+            </div>
+
+        </div>
+
+
+        <div class="card project">
+
+            <div class="project-icon">
+                <i class="fas fa-file-circle-check"></i>
+            </div>
+
+            <div>
+                <h3>Digital Student Clearance</h3>
+
+                <p>
+                    A proposed web-based system for tracking
+                    student clearance.
+                </p>
+
+                <div class="tags">
+                    <span>PHP</span>
+                    <span>MySQL</span>
+                    <span>CSS</span>
+                </div>
+
+                <a href="#" class="project-link">
+                    View Project →
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="card project">
+
+            <div class="project-icon">
+                <i class="fas fa-globe"></i>
+            </div>
+
+            <div>
+                <h3>Personal Portfolio Website</h3>
+
+                <p>
+                    A responsive website showcasing my skills,
+                    projects, and education.
+                </p>
+
+                <div class="tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+
+                <a href="#" class="project-link">
+                    View Project →
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="card project">
+
+            <div class="project-icon">
+                <i class="fas fa-calculator"></i>
+            </div>
+
+            <div>
+                <h3>Mathematics Learning Portal</h3>
+
+                <p>
+                    A portal for organizing mathematics learning
+                    materials and activities.
+                </p>
+
+                <div class="tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+
+                <a href="#" class="project-link">
+                    View Project →
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+<section id="education" class="section gray">
+
+    <div class="section-inner">
+
+        <div class="section-title">
+            <p>MY ACADEMIC JOURNEY</p>
+            <h2>My <span>Education</span></h2>
+        </div>
+
+        <div class="education">
+
+            <div class="education-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+
+            <div>
+
+                <small>COLLEGE</small>
+
+                <h3>
+                    Bachelor of Science in Information Technology
+                </h3>
+
+                <p>
+                    <i class="fas fa-school"></i>
+                    Nueva Vizcaya State University
+                </p>
+
+                <p>
+                    Studying programming, web development,
+                    software engineering, networking, databases,
+                    and other areas of Information Technology.
+                </p>
 
             </div>
 
         </div>
 
-    </footer>
+    </div>
+
+</section>
 
 
-    <!-- Back To Top -->
+<!-- HOBBIES -->
+<section id="hobbies" class="section">
 
-    <button
-        class="back-top"
-        id="back-top"
-        aria-label="Back to top"
-    >
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <div class="section-title">
+        <p>WHAT I ENJOY</p>
+        <h2>My <span>Hobbies</span></h2>
+    </div>
+
+    <div class="cards hobbies">
+
+        <div class="card">
+            <i class="fas fa-person-swimming"></i>
+            <h3>Swimming</h3>
+            <p>Enjoying time in the water.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-gamepad"></i>
+            <h3>Mobile Games</h3>
+            <p>Playing mobile games during free time.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-film"></i>
+            <h3>Watching Movies</h3>
+            <p>Watching movies for entertainment.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-microchip"></i>
+            <h3>Exploring Technology</h3>
+            <p>Learning about new technologies.</p>
+        </div>
+
+    </div>
+
+</section>
 
 
-    <script src="script.js"></script>
+<!-- CONTACT -->
+<section id="contact" class="section gray">
+
+    <div class="section-inner">
+
+        <div class="section-title">
+            <p>LET'S CONNECT</p>
+            <h2>Contact <span>Me</span></h2>
+        </div>
+
+        <div class="contact">
+
+            <div class="contact-info">
+
+                <h3>Let's Talk</h3>
+
+                <p>
+                    If you want to know more about me or my projects,
+                    feel free to send me a message.
+                </p>
+
+                <div class="contact-item">
+                    <i class="fas fa-user"></i>
+                    <div>
+                        <b>Name</b>
+                        <p>Pocholo Kieanh G. Cadavis</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-school"></i>
+                    <div>
+                        <b>School</b>
+                        <p>Nueva Vizcaya State University</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-code"></i>
+                    <div>
+                        <b>Role</b>
+                        <p>IT Student & Aspiring Software Developer</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <form id="contactForm">
+
+                <div class="input">
+                    <label>Name</label>
+                    <input type="text" id="name"
+                           placeholder="Your name" required>
+                </div>
+
+                <div class="input">
+                    <label>Email</label>
+                    <input type="email" id="email"
+                           placeholder="Your email" required>
+                </div>
+
+                <div class="input">
+                    <label>Message</label>
+                    <textarea id="message" rows="6"
+                              placeholder="Write your message..."
+                              required></textarea>
+                </div>
+
+                <button type="submit" class="btn primary">
+                    Send Message
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <h3>
+        Pocholo <span>Cadavis</span>
+    </h3>
+
+    <p>
+        IT Student & Aspiring Software Developer
+    </p>
+
+    <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+
+    <p>
+        © <span id="year"></span>
+        Pocholo Kieanh G. Cadavis. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script>
+
+    // Mobile Navigation
+    function toggleMenu() {
+        document.getElementById("navLinks")
+            .classList.toggle("active");
+    }
+
+    // Close menu after clicking a link
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            document.getElementById("navLinks")
+                .classList.remove("active");
+        });
+    });
+
+    // Contact Form
+    document.getElementById("contactForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+
+            alert(
+                "Thank you, " + name +
+                "! Your message has been received."
+            );
+
+            this.reset();
+        });
+
+    // Current Year
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
 
 </body>
 </html>
+
+Save it simply as "index.html", then open it in your browser. No separate CSS or JavaScript file is needed.
+Compose
+Write to Pocholo Kieanh
